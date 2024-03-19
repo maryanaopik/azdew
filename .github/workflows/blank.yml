@@ -1,7 +1,12 @@
 name: build matrix demo1
 
-on: [push, pull_request]
-
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: "*/30 */5 * * *"
 jobs:
   test:
     runs-on: ubuntu-latest
